@@ -3,7 +3,7 @@ FROM theasp/novnc
 
 ### https://momentum-client.com/#download
 RUN wget https://momentum-client.com/apps/momentum.deb && \
-    apt-get update && \
+    apt-get update --allow-releaseinfo-change && \
     apt-get install -y ./momentum.deb libasound2 procps libgbm1 && \
     rm -rfv momentum.deb /var/lib/apt/lists/*
 
